@@ -51,9 +51,10 @@ h1#branding {
 	font-weight:normal;
 	font-size:3em;
 	text-align:left;
-	background:#aaa;
-	padding:.7em 1em;
-	margin-bottom:0;
+	background:#f2f2f2;
+	padding:.1em .4em .2em;
+	margin:0;
+    border-bottom: 2px #e0e0e0 solid;
 }
 
 

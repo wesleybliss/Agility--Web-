@@ -1,0 +1,8 @@
+<ul>
+    <% _.each(users, function(user) { %>
+    <li>
+        <div class="title"><a href="<%= user.get('id') %>"><%= user.get('email') %></a></div>
+        <div class="content"><%= user.get('first_name') %> <%= user.get('last_name') %></div>
+    </li>
+    <% }) %>
+</ul>
