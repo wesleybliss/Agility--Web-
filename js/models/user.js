@@ -7,10 +7,6 @@ define([
         
         url: function() {
             return '/users';
-        },
-        
-        defaults: {
-            email: 'nobody@backbone.js'
         }
         
     });

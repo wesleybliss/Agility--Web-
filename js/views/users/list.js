@@ -13,26 +13,23 @@ define([
         initialize: function() {
             
             this.collection = new UsersCollection();
-            //this.collection.add({ email: 'test@backbone.js' });
-            this.collection.fetch({
-                dataType: 'json',
-                success: _.bind( function(collection, response) {
-                    console.log('data: ', collection.data);
-                }, this )
-            });
+            this.collection.on( 'reset', this.render, this );
+            
+            // TODO This could be moved to the Model constructor
+            this.collection.fetch();
             
         },
         
         render: function() {
             
-            //var data = {
-            //    _: _,
-            //    users: this.collection.models
-            //};
-            //console.log(data.users);
+            // TODO Maybe not super necessary to send Underscore helper?
+            var data = {
+                _: _,
+                users: this.collection.models
+            };
             
-            //var compiledTemplate = _.template( usersListTemplate, data );
-            //this.$el.html( compiledTemplate );
+            var compiledTemplate = _.template( usersListTemplate, data );
+            this.$el.html( compiledTemplate );
             
         }
         

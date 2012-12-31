@@ -9,14 +9,12 @@ define([
         model: UserModel,
         url: 'http://agility.local:3000/users',
         
-        /* Override the Backbone.sync method so we
-         * can use JSONP accross different domains. */
-        //sync: function( method, model, options ) {
-        //    console.log('running sync');
-        //    options.timeout = 10000;
-        //    options.dataType = 'jsonp';
-        //    return Backbone.sync( method, model, options );
-        //}
+        /* Override the Backbone.parse method so we can
+         * properly assign models, since the API returns
+         * (result).data{} instead of just data{} */
+        parse: function( response ) {
+            return response.data;
+        }
         
     });
     
