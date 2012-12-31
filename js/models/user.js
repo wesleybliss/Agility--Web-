@@ -7,11 +7,15 @@ define([
         
         url: function() {
             return '/users';
-        },
+        }/*,
         
         defaults: {
             email: 'nobody@backbone.js'
-        }
+        }/*,
+        
+        initialize: function() {
+            this.fetch();
+        }*/
         
     });
     

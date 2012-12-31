@@ -19,13 +19,12 @@ define([
         app_router.on( 'showUsers', function() {
             var userListView = new UserListView();
             userListView.initialize();
-            userListView.render();
         });
         
         app_router.on( 'route:defaultAction', function(actions) {
             //console.log( 'No route: ', actions );
             var userListView = new UserListView();
-            userListView.render();
+            userListView.initialize();
         });
         
         Backbone.history.start({
