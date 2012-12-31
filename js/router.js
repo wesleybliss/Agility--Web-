@@ -1,12 +1,14 @@
 
 define([
     'jquery', 'underscore', 'backbone',
-    'views/users/list'
-], function($, _, Backbone, UserListView) {
+    'views/users/list',
+    'views/projects/list'
+], function($, _, Backbone, UserListView, ProjectListView) {
     
     var AppRouter = Backbone.Router.extend({
         routes: {
             '/users': 'showUsers',
+            '/projects': 'showProjects',
             
             '*actions': 'defaultAction'
         }
@@ -21,9 +23,14 @@ define([
             userListView.initialize();
         });
         
+        app_router.on( 'showProjects', function() {
+            var projectListView = new ProjectListView();
+            projectListView.initialize();
+        });
+        
         app_router.on( 'route:defaultAction', function(actions) {
             //console.log( 'No route: ', actions );
-            var userListView = new UserListView();
+            var projectListView = new ProjectListView();
         });
         
         Backbone.history.start({
