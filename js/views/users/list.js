@@ -15,7 +15,7 @@ define([
             this.collection = new UsersCollection();
             //this.collection.add({ email: 'test@backbone.js' });
             this.collection.fetch({
-                dataType: 'jsonp',
+                dataType: 'json',
                 success: _.bind( function(collection, response) {
                     console.log('data: ', collection.data);
                 }, this )
