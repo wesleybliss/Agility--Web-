@@ -31,13 +31,37 @@
         
         <div class="clear"></div>
         
-        <div class="grid_12">
-            <h3>Projects</h3>
-            <div id="projects">
-                
+        <div id="current" class="grid_3">
+            <div class="box">
+                <h2><a href="/users">Current</a></h2>
+                <?php #echo $sampleStories; ?>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>Backlog</h2>
+                <?php echo $sampleStories; ?>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>Icebox</h2>
+                <?php echo $sampleStories; ?>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>My Stories</h2>
+                <?php echo $sampleStories; ?>
             </div>
         </div>
         
+        <div class="clear"></div>
+        <div class="grid_12" id="site_info">
+            <div class="box">
+                <p>Agility, created by <a href="http://linkedin.com/in/wesleybliss/">Wesley Bliss</a>, a GAMMA GAMMA accomplice.</p>
+            </div>
+        </div>
         <div class="clear"></div>
         
     </div>

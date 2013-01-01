@@ -1,0 +1,8 @@
+<ul>
+    <% _.each(project.stories, function(story) { %>
+    <li>
+        <div class="title"><a href="#/projects/story/<%= story.get('id') %>"><%= story.get('title') %></a></div>
+        <div class="content"><%= story.get('description') %></div>
+    </li>
+    <% }) %>
+</ul>

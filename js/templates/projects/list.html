@@ -1,7 +1,7 @@
 <ul>
     <% _.each(projects, function(project) { %>
     <li>
-        <div class="title"><a href="<%= project.get('id') %>"><%= project.get('name') %></a></div>
+        <div class="title"><a href="#/projects/<%= project.get('id') %>"><%= project.get('name') %></a></div>
         <div class="content"><%= project.get('description') %></div>
     </li>
     <% }) %>

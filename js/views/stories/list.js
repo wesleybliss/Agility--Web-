@@ -1,18 +1,18 @@
 
 define([
     'jquery', 'underscore', 'backbone',
-    'models/project',
-    'collections/projects',
-    'text!templates/projects/list.html'
-], function($, _, Backbone, ProjectModel, ProjectsCollection, projectsListTemplate) {
+    'models/user',
+    'collections/stories',
+    'text!templates/stories/list.html'
+], function($, _, Backbone, StoryModel, StoriesCollection, storiesListTemplate) {
     
-    var ProjectListView = Backbone.View.extend({
+    var StoryListView = Backbone.View.extend({
         
         el: $('div#projects'),
         
         initialize: function() {
             
-            this.collection = new ProjectsCollection();
+            this.collection = new StoriesCollection();
             this.collection.on( 'reset', this.render, this );
             
             // TODO This could be moved to the Model constructor
@@ -25,16 +25,16 @@ define([
             // TODO Maybe not super necessary to send Underscore helper?
             var data = {
                 _: _,
-                projects: this.collection.models
+                stories: this.collection.models
             };
             
-            var compiledTemplate = _.template( projectsListTemplate, data );
+            var compiledTemplate = _.template( storiesListTemplate, data );
             this.$el.html( compiledTemplate );
             
         }
         
     });
     
-    return ProjectListView;
+    return StoryListView;
     
 });
