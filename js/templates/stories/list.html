@@ -1,8 +1,31 @@
-<ul class="accordion">
-    <% _.each(stories, function(story) { %>
-    <li>
-        <div class="title"><a href="stories/<%= story.get('id') %>"><%= story.get('title') %></a></div>
-        <div class="content"><%= story.get('description') %></div>
-    </li>
-    <% }) %>
-</ul>
+        <div id="current" class="grid_3">
+            <div class="box">
+                <h2><a href="/users">Current</a></h2>
+                <ul class="accordion">
+                    <% _.each(stories, function(story) { %>
+                    <li>
+                        <div class="title"><a href="stories/<%= story.get('id') %>"><%= story.get('title') %></a></div>
+                        <div class="content"><%= story.get('description') %></div>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>Backlog</h2>
+                (Empty)
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>Icebox</h2>
+                (Empty)
+            </div>
+        </div>
+        <div class="grid_3">
+            <div class="box">
+                <h2>My Stories</h2>
+                (Empty)
+            </div>
+        </div>

@@ -46,7 +46,7 @@
     <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.8.3.min.js"%3E%3C/script%3E'))</script>-->
     
-    <!--<script type="text/javascript" src="js/foundation.min.js"></script>-->
+    <!--<script type="text/javascript" src="js/libs/foundation.min.js"></script>-->
     <script type="text/javascript" src="js/libs/underscore-min.js"></script>
     <script type="text/javascript" src="js/libs/backbone-min.js"></script>
     <script data-main="js/main" type="text/javascript" src="js/libs/require.js"></script>

@@ -43,16 +43,16 @@ define([
                 stories: this.collection.models
             };
             
-            //var compiledTemplate = _.template( storiesListTemplate, data );
-            //this.$el.html( compiledTemplate );
-            
-            var compiledTemplate = _.template( trackerTemplateLayout, {} );
+            var compiledTemplate = _.template( storiesListTemplate, data );
             this.$el.html( compiledTemplate );
+            
+            //var compiledTemplate = _.template( trackerTemplateLayout, {} );
+            //this.$el.html( compiledTemplate );
             
             //compiledTemplate = _.template( projectShowTemplate, {} );
             //this.$el.find('ul').html( compiledTemplate );
             
-            this.$el.find('ul').html( projectShowTemplate );
+            //this.$el.find('ul').html( projectShowTemplate );
             
         }
         

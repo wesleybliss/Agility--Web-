@@ -19,12 +19,94 @@ require.config({
         },
         socketio: {
             exports: 'io'
+        },
+        'libs/foundation/jquery.foundation.topbar': {
+            deps: ['jquery'],
+        },
+        'libs/jquery.cookie': {
+            deps: ['jquery']
+        },
+        'libs/jquery.event.move': {
+            deps: ['jquery']
+        },
+        'libs/jquery.event.swipe': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.accordion': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.alerts': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.buttons': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.clearing': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.forms': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.joyride': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.magellan': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.mediaQueryToggle': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.navigation': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.orbit': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.reveal': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.tabs': {
+            deps: ['jquery']
+        },
+        'libs/foundation/jquery.foundation.tooltips': {
+            deps: ['jquery']
+        },
+        'libs/jquery.offcanvas': {
+            deps: ['jquery']
+        },
+        'libs/jquery.placeholder': {
+            deps: ['jquery']
+        },
+        'libs/foundation/foundation.min': {
+            deps: [
+                'libs/jquery.cookie',
+                'libs/jquery.event.move',
+                'libs/jquery.event.swipe',
+                'libs/foundation/jquery.foundation.accordion',
+                'libs/foundation/jquery.foundation.alerts',
+                'libs/foundation/jquery.foundation.buttons',
+                'libs/foundation/jquery.foundation.clearing',
+                'libs/foundation/jquery.foundation.forms',
+                'libs/foundation/jquery.foundation.joyride',
+                'libs/foundation/jquery.foundation.magellan',
+                'libs/foundation/jquery.foundation.mediaQueryToggle',
+                'libs/foundation/jquery.foundation.navigation',
+                'libs/foundation/jquery.foundation.orbit',
+                'libs/foundation/jquery.foundation.reveal',
+                'libs/foundation/jquery.foundation.tabs',
+                'libs/foundation/jquery.foundation.tooltips',
+                'libs/foundation/jquery.foundation.topbar',
+                'libs/jquery.offcanvas',
+                'libs/jquery.placeholder',
+                'libs/foundation/modernizr.foundation',
+            ]
         }
     }
 });
 
-require(['app'], function(App) {
+require(['app', 'client'], function(App, Client) {
     App.initialize();
+    Client.initialize();
 });
 
 
