@@ -1,4 +1,4 @@
-<!--?php $sampleStories = file_get_contents( 'sample_data/stories.inc.php' ); ?-->
+<?php $sampleStories = ''; #file_get_contents( 'sample_data/stories.inc.php' ); ?>
 <!DOCTYPE html>
 <html lang-en>
 <head>

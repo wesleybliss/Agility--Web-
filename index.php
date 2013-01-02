@@ -26,7 +26,7 @@
         </div>
         <div class="clear"></div>
         <div class="grid_12">
-            <h2 id="page-heading">Open source, agile task management, similar to Pivotal Tracker, written in Node.js and Bacbkbone.js.</h2>
+            <h2 id="page-heading">Things go here.</h2>
         </div>
         
         <div class="clear"></div>
@@ -51,6 +51,43 @@
     <script type="text/javascript" src="js/libs/backbone-min.js"></script>
     <script data-main="js/main" type="text/javascript" src="js/libs/require.js"></script>
     <!--<script type="text/javascript" src="js/app.js"></script>-->
+    <script type="text/javascript" src="http://agility.local:3000/faye/client.js"></script>
+    <script type="text/javascript" src="http://agility.local:4000/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        //DEBUG Testing realtime subscription with FAYE
+        var faye = new Faye.Client(
+            'http://agility.local:3000/faye', {
+                timeout: 120,
+                retry: 3
+            }
+        );
+        window.onload = function() {
+            var sub = faye.subscribe( '/foo', function(message) {
+                console.log( message );
+            });
+            sub.callback( function() {
+                console.log( 'FAYE | Subscribed to /foo' );
+            });
+            sub.errback( function(error) {
+                console.log( 'FAYE | ERROR | ' + error );
+            });
+            window.setTimeout( function() {
+                faye.publish( '/foo', {text: 'heyo'} );
+            }, 2000 );
+            
+            
+            // DEBUG socket.io test
+            //define(['socketio'], function(io) {
+                var socket = io.connect('http://agility.local:4000');
+                socket.on( 'hello', function (data) {
+                    console.log( 'socket says: ' + data.message );
+                    socket.emit('sayhi', { my: 'data' });
+                });
+                //socket.emit('hello', {text: 'heyo'});
+            //});
+            
+        };
+    </script>
     
 </body>
 </html>

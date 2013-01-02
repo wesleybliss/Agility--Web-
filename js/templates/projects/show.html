@@ -1,8 +1,7 @@
-<ul>
-    <% _.each(project.stories, function(story) { %>
-    <li>
-        <div class="title"><a href="#/projects/story/<%= story.get('id') %>"><%= story.get('title') %></a></div>
-        <div class="content"><%= story.get('description') %></div>
-    </li>
-    <% }) %>
-</ul>
+                <div class="block">
+                    <ul class="nomargin accordion">
+                        <% _.each(stories, function(story) { %>
+                        <% include ../stories/elements/story.html %>
+                        <% }) %>
+                    </ul>
+                </div>
